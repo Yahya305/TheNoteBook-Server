@@ -28,7 +28,7 @@ const corsOptions = {
   }
 };
 app.use(cors(corsOptions));
-connectMongo();
+connectMongo(app,port);
 
 
 app.use(express.json())
@@ -38,6 +38,6 @@ app.use('/api/auth',require('./routes/auth'))
 app.use('/api/imagelab',require('./routes/imagelab'))
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Example app listening on port ${port}`)
+// })

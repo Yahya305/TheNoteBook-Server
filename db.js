@@ -9,7 +9,7 @@ const MONGO_PASS=process.env.MONGO_PASS
 const URIstring =
   // "mongodb+srv://Yahya:samyaya2003305@notesapp.k0xfpfx.mongodb.net/?retryWrites=true&w=majority";
   `mongodb+srv://Yahya:${MONGO_PASS}@notesapp.k0xfpfx.mongodb.net/mydatabase`;
-const connectMongo = () => {
+const connectMongo = (app,port) => {
   mongoose.set("strictQuery", true);
   mongoose.connect(
     URIstring,
@@ -21,6 +21,9 @@ const connectMongo = () => {
       if (err) {
         console.log(err)
       } else {
+        app.listen(port, () => {
+          console.log(`Example app listening on port ${port}`)
+        })
         console.log("Connection successful")
       }
       // console.log(err);
