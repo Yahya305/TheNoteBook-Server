@@ -3,13 +3,15 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 const port = 5000
+require("dotenv").config({ path: "./.env.local" })
 
 // app.use(cors({
 //   origin:'http://localhost:3000',
 //   origin:'http://192.168.18.54:3000',
 // }))
-
-const allowedOrigins = ['http://localhost:3000', 'http://192.168.18.54:3000'];
+const BASE_URL=process.env.BASE_URL
+// const allowedOrigins = ['http://localhost:3000', 'http://192.168.18.54:3000'];
+const allowedOrigins = [BASE_URL];
 const corsOptions = {
   origin: function (origin, callback) {
     // check if the origin is allowed
