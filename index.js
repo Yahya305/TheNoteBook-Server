@@ -2,8 +2,8 @@ const  connectMongo= require("./db")
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const port = 5000
 require("dotenv").config({ path: "./.env.local" })
+const port = process.env.PORT || 5000
 
 // app.use(cors({
 //   origin:'http://localhost:3000',
