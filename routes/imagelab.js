@@ -55,7 +55,7 @@ try {
   console.log("Request Received")
   upload(req, res, (err) => {
     if (err) {
-      console.log(err);
+      res.status(500).send("Internal Server Error")
     } else {
       jimp.read(req.file.buffer).then((image) => {
         for (let key in req.query) {
@@ -78,6 +78,10 @@ try {
             res.send({ message: "successfully uploaded", imageData: buffer });
           })
           // .write("../modified.jpg");
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send(`Internal Server Error ${error}`);
       });
     }
   });
