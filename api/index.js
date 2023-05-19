@@ -21,7 +21,7 @@ const corsOptions = {
       return callback(null, true);
     }
     if (allowedOrigins.indexOf(origin) === -1) {
-      console.log("Not Allowed")
+      console.log("Not Allowed:",process.env.FRONTEND_URL,".")
       // if the origin is not allowed, reject the request
       return callback(new Error('Not allowed by CORS'));
     }
