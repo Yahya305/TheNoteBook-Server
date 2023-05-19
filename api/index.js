@@ -1,4 +1,4 @@
-const  connectMongo= require("./db")
+const  connectMongo= require("../db")
 const express = require('express')
 const cors = require('cors')
 const app = express()
@@ -35,10 +35,10 @@ connectMongo(app,port);
 
 
 app.use(express.json())
-app.use('/api/randomquote',require('./routes/quote'));
-app.use('/api/notes',require('./routes/notes'))
-app.use('/api/auth',require('./routes/auth'))
-app.use('/api/imagelab',require('./routes/imagelab'))
+app.use('/api/randomquote',require('../routes/quote'));
+app.use('/api/notes',require('../routes/notes'))
+app.use('/api/auth',require('../routes/auth'))
+app.use('/api/imagelab',require('../routes/imagelab'))
 
 
 // app.listen(port, () => {
