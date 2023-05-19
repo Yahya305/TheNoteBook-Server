@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000
 // }))
 const BASE_URL=process.env.BASE_URL
 // const allowedOrigins = ['http://localhost:3000', 'http://192.168.18.54:3000'];
-const allowedOrigins = ['http://localhost:3000', 'http://192.168.18.54:3000'];
+const allowedOrigins = ['http://localhost:3000', 'http://192.168.18.54:3000',process.env.FRONTEND_URL];
 const corsOptions = {
   origin: function (origin, callback) {
     console.log(origin)
