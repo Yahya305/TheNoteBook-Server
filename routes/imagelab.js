@@ -36,13 +36,13 @@ router.post("/save", (req, res) => {
           });
         }
       });
-      const fileName = "filename.jpg";
-      fs.writeFile(fileName, buffer, "binary", (err) => {
-        if (err) {
-          console.log(err);
-          return res.status(500).send({ message: "Server error" });
-        }
-      });
+      // const fileName = "filename.jpg";
+      // fs.writeFile(fileName, buffer, "binary", (err) => {
+      //   if (err) {
+      //     console.log(err);
+      //     return res.status(500).send({ message: "Server error" });
+      //   }
+      // });
     }
   });
 } catch (error) {
@@ -77,7 +77,7 @@ try {
             });
             res.send({ message: "successfully uploaded", imageData: buffer });
           })
-          .write("../backend/modified.jpg");
+          // .write("../modified.jpg");
       });
     }
   });
@@ -98,13 +98,13 @@ router.get("/find/:image_id", async (req, res) => {
     console.log(fileData);
     // Save the image to local storage
     const fileName = "filenameee.jpg";
-    fs.writeFile(fileName, fileData, "binary", (err) => {
-      if (err) {
-        console.log(err);
-        return res.status(500).send({ message: "Server error" });
-      }
-      res.send({ message: "Image retrieved successfully", imageData: image });
-    });
+    // fs.writeFile(fileName, fileData, "binary", (err) => {
+    //   if (err) {
+    //     console.log(err);
+    //     return res.status(500).send({ message: "Server error" });
+    //   }
+    //   res.send({ message: "Image retrieved successfully", imageData: image });
+    // });
   } catch (err) {
     console.error(err);
     res.status(500).send({ message: "Internal Server Error" });
